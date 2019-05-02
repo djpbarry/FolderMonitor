@@ -1,0 +1,1 @@
+Add-Content "D:\OneDrive - The Francis Crick Institute\WorkingDataActivityRecord.txt" (Get-ChildItem -Path "D:\OneDrive - The Francis Crick Institute\Working Data" -Recurse | Where-Object -FilterScript {($_.LastWriteTime -gt (Get-Date).AddDays(-1)) -and ($_.PSIsContainer)} | Select-Object LastWriteTime,FullName)
